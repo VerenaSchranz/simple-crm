@@ -1,0 +1,14 @@
+import { Injectable, inject } from '@angular/core';
+import { Firestore } from '@angular/fire/firestore';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class FirebaseService {
+  firestore: Firestore = inject(Firestore);
+  collection() {
+    throw new Error('Method not implemented.');
+  }
+
+  constructor() { }
+}

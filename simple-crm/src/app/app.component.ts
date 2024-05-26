@@ -11,7 +11,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { NgModel } from '@angular/forms';
-import { FormsModule } from '@angular/forms'; // Import FormsModule
+import { FormsModule } from '@angular/forms';
 
 
 @Component({
@@ -30,7 +30,8 @@ import { FormsModule } from '@angular/forms'; // Import FormsModule
     MatFormFieldModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    FormsModule
+    FormsModule,
+
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
