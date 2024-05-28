@@ -12,6 +12,9 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { NgModel } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
+import { CommonModule } from '@angular/common';
+import {MatCardModule} from '@angular/material/card';
 
 
 @Component({
@@ -31,7 +34,9 @@ import { FormsModule } from '@angular/forms';
     MatDatepickerModule,
     MatNativeDateModule,
     FormsModule,
-
+    MatProgressBarModule,
+    CommonModule,
+    MatCardModule
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',

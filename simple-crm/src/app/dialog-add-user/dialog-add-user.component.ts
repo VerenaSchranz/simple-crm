@@ -9,6 +9,9 @@ import { FormsModule, NgModel } from '@angular/forms';
 import { User } from '../models/user.class';
 import { FirebaseService } from '../services/firebase.service';
 import { addDoc, collection } from '@angular/fire/firestore';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
+import { CommonModule } from '@angular/common';
+
 @Component({
   selector: 'app-dialog-add-user',
   standalone: true,
@@ -22,13 +25,16 @@ import { addDoc, collection } from '@angular/fire/firestore';
     MatFormFieldModule,
     MatDatepickerModule,
     FormsModule,
+    MatProgressBarModule,
+    CommonModule,
   ],
   templateUrl: './dialog-add-user.component.html',
   styleUrl: './dialog-add-user.component.scss',
 })
 export class DialogAddUserComponent implements OnInit {
   user = new User();
-  birthDate =new Date();
+  birthDate = new Date();
+  loading:boolean = false;
   picker1: any;
   constructor( private firebase: FirebaseService, public dialogRef: MatDialogRef<DialogAddUserComponent>) { }
 
@@ -39,13 +45,14 @@ export class DialogAddUserComponent implements OnInit {
   async saveUser(){
     this.user.birthDate = this.birthDate.getTime();
     console.log('Current User is', this.user)
+    this.loading = true;
 
     await addDoc(collection(this.firebase.firestore, 'users'), this.user.toJSON()).catch(
       (err) => { console.error(err) }
-    ).then(
-      (user) => {
-        console.log(user);
-      }
+    ).then((result) => { 
+      this.loading = false; 
+      console.log('Adding user finished', result);
+     }
     )
 
     this.dialogRef.close();
