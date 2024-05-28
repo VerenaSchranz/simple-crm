@@ -33,15 +33,13 @@
 
 .logo-container {
   border-bottom: 1px solid rgba(0, 0, 0, 0.25);
-  padding-right: 16px;
-  padding-left: 16px;
   min-height: 56px;
   display: flex;
   align-items: center;
 }
 mat-toolbar, mat-toolbar-row {
     min-height: 16px;
-    height: 56px;
+    height: 65px;
 }
 .router-container {
     padding-left: 56px;

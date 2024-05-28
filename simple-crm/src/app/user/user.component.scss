@@ -1,16 +1,49 @@
+mat-card {
+  padding-left:0;
+  padding-right:0;
+}
+
 .add-user-btn {
-    position: absolute;
-    right: 56px;
-    bottom: 56px;
+  position: absolute;
+  right: 56px;
+  bottom: 56px;
 }
 .user-table {
   width: 100%;
   padding: 20px;
+  border-collapse: collapse;
+  tr {
+    &:not(:first-child) {
+      cursor: pointer;
+    }
+    &:not(:last-child) {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.4); 
+    }
+    &:not(:first-child) {
+      &:hover {
+        background-color: #e9e9e9;
+      }
+    }
+    td {
+      height: 48px;
+      &:first-child {
+        padding-left: 16px;
+      }
+    }
+    th {
+      &:first-child {
+        padding-left: 16px;
+        height: 48px;
+      }
+    }
+
+  
+  }
+
   th {
     color: rgb(0 0 0 / 0.4);
     font-size: 14px;
     font-weight: 500;
     text-align: start;
   }
-
 }
