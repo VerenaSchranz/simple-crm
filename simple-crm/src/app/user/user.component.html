@@ -1,26 +1,22 @@
 <mat-card>
   <table class="user-table">
-    <tr>
-      <th>Name</th>
-      <th>E-Mail</th>
-      <th>City</th>
-    </tr>
-    <tr>
-      <td>dwf</td>
-      <td>wfwf</td>
-      <td>wddw</td>
-    </tr>
-    <tr>
-      <td>dwf</td>
-      <td>wfwf</td>
-      <td>wddw</td>
-    </tr>
-    <tr>
-      <td>dwf</td>
-      <td>wfwf</td>
-      <td>wddw</td>
-    </tr>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>E-Mail</th>
+        <th>City</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <td>{{ user.firstName }}</td>
+        <td>{{ user.lastName }}</td>
+        <td>{{ user.birthDate }}</td>
+        <td>{{ user.street }}</td>
+        <td>{{ user.zipCode }}</td>
+        <td>{{ user.city }}</td>
+      </tr>
+    </tbody>
   </table>
-  <!-- <mat-card-content>Simple card</mat-card-content> -->
 </mat-card>
 <button (click)="openDialog()" [matTooltipPosition]="position.value!" class="add-user-btn"  mat-fab color="primary" matTooltip="tesststest"><mat-icon>add</mat-icon></button>
