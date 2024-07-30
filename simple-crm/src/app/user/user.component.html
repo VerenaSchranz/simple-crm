@@ -9,11 +9,8 @@
     </thead>
     <tbody>
       <tr *ngFor="let user of users">
-        <td>{{ user.firstName }}</td>
-        <td>{{ user.lastName }}</td>
-        <td>{{ user.birthDate }}</td>
-        <td>{{ user.street }}</td>
-        <td>{{ user.zipCode }}</td>
+        <td>{{ user.firstName }} {{ user.lastName }}</td>
+        <td>{{ user.email }}</td>
         <td>{{ user.city }}</td>
       </tr>
     </tbody>

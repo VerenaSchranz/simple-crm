@@ -18,11 +18,11 @@ export class FirebaseService {
   subUsersList(): void {
     const q = query(this.getUsersRef());
     onSnapshot(q, (snapshot) => {
-      const users: User[] = [];
+      const allUsers: User[] = [];
       snapshot.forEach((doc) => {
-        users.push(this.setUserObject(doc.data(), doc.id));
+        allUsers.push(this.setUserObject(doc.data(), doc.id));
       });
-      this.usersSubject.next(users);
+      this.usersSubject.next(allUsers);
     });
   }
 
@@ -35,6 +35,7 @@ export class FirebaseService {
       id: id,
       firstName: data?.firstName || '',
       lastName: data?.lastName || '',
+      email: data?.email || '',
       birthDate: data?.birthDate || new Date(),
       street: data?.street || '',
       zipCode: data?.zipCode || 0,
